@@ -14,9 +14,11 @@
 <%= link_to 'Like', like_pin_path(@pin), method: :put %>
 <span class="glyphicon glyphicon-heart"> </span>
 <%= @pin.get_upvotes.size%>
+<% if user_signed_in? %>
 <%= link_to 'Back', root_path %>
 <%= link_to 'Edit', edit_pin_path %>
 <%= link_to 'Delete', pin_path, method: :delete, data: { confirm: "Are you sure?"} %>
+<%end%>
 </div>
 </div>
 </div>
