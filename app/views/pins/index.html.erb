@@ -1,7 +1,18 @@
-
-
+<div id="pins"class="transition-enabled">
 <% @pins.each do |pin| %>
+<div class="box panel panel-default">
 <%= image_tag pin.image.url(:medium) %>
-<h2><%= link_to pin.title, pin %> </h2>
-
+<div class="panel-body">
+  <h2><%= link_to pin.title, pin %> </h2>
+  <hr>
+  <p>名前　年齢　B W H </p>
+  <hr>
+   <p>店舗名 </p>
+<h4>アイコン　profile  </h4>
+   <p>店舗名 </p>
+   <button type="button" class="btn btn-primary">Primary01</button>
+   <button type="button" class="btn btn-primary">Primary02</button>
+  </div>
+  </div>
 <% end %>
+</div>
