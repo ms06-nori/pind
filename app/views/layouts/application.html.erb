@@ -7,6 +7,39 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			
+		   <ul class="navbar-brand">
+				<%= link_to "PinD", root_path %>
+			</ul>
+		</div>
+		<% if user_signed_in? %>
+		<div class="collapse navbar-collapse" id="navbarEexample5">
+			<ul class="nav navbar-nav navbar-right">
+				 <li><%= link_to "New Pin", new_pin_path %></li>
+            <li><%= link_to "Account", edit_user_registration_path %></li>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+
+
+
+			</ul>
+			
+		</div>
+	</div>
+<% else %>
+<div class="collapse navbar-collapse" id="navbarEexample5">
+			<ul class="nav navbar-nav navbar-right">
+				 <li><%= link_to "Sign Up", new_user_registration_path %></li>
+            <li><%= link_to "Sign In", new_user_session_path %></li>
+           
+<% end %>
+
+</nav>
+
+ 
+
 <% flash.each do |name, msg| %>
  <div class="alert alert-<%= name == "notice" ? "success" : "error" %>">
   
@@ -19,3 +52,4 @@
 
 </body>
 </html>
+
